@@ -136,7 +136,7 @@ def predict(X, W1, W2):
     # Get the index of the maximum value in each row
     predictions = np.argmax(A2, axis=1)
 
-    label_to_name = {0: 'Iris-setosa', 1: 'Iris-versicolor', 2: 'Iris-virginica'}
+    label_to_name = { 0: 'Iris-versicolor', 1: 'Iris-virginica'}
     flower_names = np.array([label_to_name[label] for label in predictions])
 
     return predictions, flower_names
