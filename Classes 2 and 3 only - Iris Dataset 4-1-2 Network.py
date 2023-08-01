@@ -93,8 +93,8 @@ for itr in range(iterations):
     W2 = W2 - learning_rate * W2_update
     W1 = W1 - learning_rate * W1_update
 
-plt.plot(results["mse"], label='Mean Squared Error')
-plt.plot(results["accuracy"], label='Accuracy')
+plt.plot(results["mse"], label='Training Loss')
+plt.plot(results["accuracy"], label='Testing Loss')
 plt.title('Training Progress')
 plt.xlabel('Epoch')
 plt.ylabel('Value')
@@ -136,7 +136,7 @@ def predict(X, W1, W2):
     # Get the index of the maximum value in each row
     predictions = np.argmax(A2, axis=1)
 
-    label_to_name = {0: 'Iris-setosa', 1: 'Iris-versicolor', 2: 'Iris-virginica'}
+    label_to_name = { 0: 'Iris-versicolor', 1: 'Iris-virginica'}
     flower_names = np.array([label_to_name[label] for label in predictions])
 
     return predictions, flower_names
